@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Flask App{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+
+    <header class="header">
+      <div class="nav-container">
+        <nav class="navbar">
+          <nav class="navbar">
+            <h1>ROYAL ENFILED</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{{ url_for('home') }}" class="nav-button">Home</a>
+            <a href="{{ url_for('about') }}" class="nav-button">About Us</a>
+            <a href="{{ url_for('services') }}" class="nav-button">Services</a>
+            <a href="{{ url_for('contact') }}" class="nav-button">Contact</a>
+            <a href="{{ url_for('Login') }}" class="nav-button login-button">Login</a>
+          </nav>
+        </nav>
+      </div>
+    </header>
+    
+
+    <div class="content">
+    
+      {% block content %}
+      <!-- Page-specific content will be injected here -->
+      {% endblock %}
+      
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Flask Application</p>
+    </footer>
+  </body>
+</html>
+
